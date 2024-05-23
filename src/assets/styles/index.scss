@@ -6,6 +6,19 @@
 @import './contact';
 @import './animation';
 
+.cursor{
+  position: fixed;
+  // border:1px solid #fff;
+  top:0;
+  width: 10px;
+  height: 10px;
+  z-index:999;
+  display: flex;
+  place-items: center;
+  border-radius: 50%;
+  pointer-events:none;
+}
+
 .bs-home {
   overflow: hidden;
 

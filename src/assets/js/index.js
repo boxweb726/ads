@@ -1,12 +1,53 @@
 import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
+import gsap from 'gsap';
 import dataList from './module/dataList';
 import StickyHeader from './module/StickyHeader';
 import List from './module/List';
 import Scroll from './module/Scroll';
 
 window.addEventListener('load', () => {
-  const header = new StickyHeader();
+  // const header = new StickyHeader();
+
+  // gsap mouse pointer 애니메이션
+  gsap.set('cursor', { xPercent: -50, yPercent: -50 });
+  const cursor = document.querySelector('.cursor');
+  const cursorScale = document.querySelectorAll('.project');
+
+  window.addEventListener('mousemove', (e) => {
+    const mouseX = e.clientX;
+    const mouseY = e.clientY;
+
+    gsap.to(cursor, {
+      duration: 0.5,
+      x: mouseX,
+      y: mouseY,
+    });
+  });
+
+  cursorScale.forEach((item) => {
+    item.addEventListener('mouseleave', () => {
+      // cursor.textContent = '';
+      gsap.to(cursor, 0.2, {
+        width: '0px',
+        height: '0px',
+        background: 'transparent',
+        top: '-2.5px',
+        left: '-2.5px',
+      });
+    });
+    item.addEventListener('mousemove', () => {
+      // cursor.textContent = '->';
+      gsap.to(cursor, 0.2, {
+        width: '100px',
+        height: '100px',
+        // background: '#9c0001',
+        top: '-50px',
+        left: '-50px',
+        justifyContent: 'center',
+      });
+    });
+  });
 
   const portfolioList = new List({
     data: dataList.result.slice(0, 12),
