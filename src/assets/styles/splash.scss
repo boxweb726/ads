@@ -1,9 +1,56 @@
 #splash {
     position:fixed;
-    width: 100vh;
+    width: 100vw;
     height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     top:0;
     left:0;
     z-index: 9999;
     background: #fff;
+    animation: splash .7s 1.3s ease forwards;
 }
+
+.piece-a {
+    animation: pieceA .7s ease-in-out forwards;
+}
+.piece-d {
+    animation: pieceD .7s ease-in-out forwards;
+}
+
+
+
+@keyframes pieceA {
+    0% {
+        opacity: 0;
+        transform: translateX(-300px) translateY(-90px) scale(1.5);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(15px) translateY(0) scale(1);
+    }
+}
+
+@keyframes pieceD {
+    0% {
+        opacity: 0;
+        transform: translateX(300px) translateY(90px) scale(1.5);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(-15px) translateY(0) scale(1);
+    }
+}
+
+@keyframes splash {
+    0% {
+        height: 100vh;
+        opacity: 1;
+    }
+    100% {
+        height: 0;
+        opacity: 0;
+    }
+}
+
