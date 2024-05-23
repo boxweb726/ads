@@ -1,0 +1,20 @@
+// 변수 정리
+
+// font
+$en: "Outfit", sans-serif;
+$kr: "Noto Sans KR", sans-serif;
+// lang
+.en {
+  font-family: $en;
+}
+
+.kr {
+  font-family: $kr;
+}
+
+// color
+$color-black: #1f1e1d;
+$color-white: #fff;
+$color-red: #f84525;
+$color-gray: #bbb;
+$color-deep-gray: #363534;
